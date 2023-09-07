@@ -1,0 +1,57 @@
+<!-- onclick -->
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let i=0; //open(0)/close(1)
+window.onload=function(){
+	let r=document.querySelector("#read")
+	// => css제어할때는 <style>
+	r.onmouseover=function(){
+		r.style.cursor="pointer"
+	}
+	r.onmouseout=function(){
+		r.style.cursor="none"
+	}
+	r.onclick=function(){
+		if(i==0){
+			let ss=document.querySelector("#s")
+			ss.style.display=''; //open => show
+			r.textContent="닫기"
+			i=1;
+		}else{
+			let ss=document.querySelector("#s")
+			ss.style.display='none'; //close => hide
+			r.textContent="더보기"
+			i=0;
+		}
+	}
+	// form 태그에서 submit을 제거 => 이벤트 제거
+	// e.defaultPrevent()
+	document.querySelector("#click").onclick=function(){
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+	<a href="http://ww.naver.com" id="click">NAVER</a>
+	<p>
+	<pre>
+	(엑스포츠뉴스 권동환 기자) 황선홍 감독이 이끄는 대한민국 U-24 축구대표팀에 중국 '소림축구' 경계령이 떨어졌다.
+
+	한국 대표팀은 19일 오후 8시35분 중국 저장성 진화스타디움에서 중국 U-24 대표팀 친선 2연전 마지막 경기를 치를 예정이다.
+	<span id="read">더보기</span>
+	<span style="display:none" id="s">
+	지난 15일에 열렸던 1차전에선 한국이 엄원상(울산현대)의 멀티골과 정우영(프라이부르크)의 중거리 원더골에 힘입어 3-1 완승을 거뒀다.
+
+	황 감독과 대표팀은 오는 9월에 개최되는 2022 항저우 아시안게임을 앞두고 있다. 
+	
+	중요한 대회를 앞두고 현지 적응과 최종 점검 차원에서 중국과 친선전을 잡았지만 중국이 1차전 때 거칠게 임하면서 대표팀에 부상 경계령이 떨어졌다.
+	</span>
+	
+	</pre>
+</body>
+</html>
